@@ -16,19 +16,14 @@ public class StepDefinitions {
     private String today;
     private String actualAnswer;
 
-    @Given("today is Sunday")
-    public void today_is_sunday() {
-        today = "Sunday";
+    @Given("today is {string}")
+    public void today_is(String today) {
+        this.today = today;
     }
-
+    
     @When("I ask whether it's Friday yet")
     public void i_ask_whether_it_s_friday_yet() {
         actualAnswer = IsItFriday.isItFriday(today);
-    }
-
-    @Given("today is Friday")
-    public void today_is_Friday() {
-        today = "Friday";
     }
 
     @Then("I should be told {string}")
